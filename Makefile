@@ -1,6 +1,7 @@
 USERNAME := $(shell echo ${USER})
 USERID := $(shell id -u)
-TAG := java-18-gradle
+TAG := java-16-gradle
+.PHONY: build
 build:
 	docker build --build-arg USERNAME=$(USERNAME) --build-arg USERID=$(USERID) -t $(TAG) .
 
