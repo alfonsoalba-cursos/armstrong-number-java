@@ -7,3 +7,8 @@ build:
 
 bash:
 	docker run --rm -ti -v $(shell pwd):/app -w /app $(TAG) bash
+
+distributions:
+	docker run --rm -ti -v $(shell pwd):/app -w /app $(TAG) ./gradlew assembleDist
+
+   
