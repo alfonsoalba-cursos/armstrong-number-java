@@ -4,6 +4,7 @@
 package IsArmstrongNumber;
 import java.util.Scanner;
 import java.util.Stack;
+;
 public class App {
 
     public static void main(String[] args) {
@@ -13,36 +14,10 @@ public class App {
         number = in.nextInt();
         in.close();
 
-        if (is_armstrong_number(number)) {
+        if (Utils.IsArmstrongNumber(number)) {
             System.out.println(number.toString() + " es un número de armstrong");
         } else {
             System.out.println(number.toString() + " no es un número de armstrong");
-        }
-    }
-
-    public static Boolean is_armstrong_number(Integer numb){
-        Stack<Integer> stack = new Stack<Integer>();    
-        Integer j, remainder, temp, count, value = 0;
-        temp=numb;
-        count=0;
-        while(numb >0)   {
-                remainder=numb%10;
-                stack.push(remainder);
-                count++;
-                numb=numb/10;
-        };
-        numb=temp;
-        value=0;
-        while(!stack.empty())   {
-                j=stack.pop();
-                value=value + (int) Math.pow(j,count);
-
-        }
-
-        if(value.equals(numb)) {
-            return true;
-        } else {
-            return false;
         }
     }
 }
